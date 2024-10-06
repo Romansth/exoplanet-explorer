@@ -2,17 +2,10 @@ const express = require("express");
 const axios = require("axios");
 require("dotenv").config();
 const fs = require("fs");
+const cors = require('cors')
 
 const app = express();
-
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", `${process.env.CLIENT_URL}`);
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
-  next();
-});
+app.use(cors());
 
 const port = process.env.SERVER_PORT;
 
