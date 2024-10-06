@@ -21,7 +21,7 @@ export function MeetTheTeam () {
         {
           name: 'Saurav Ghimire',
           college: "Caldwell University 26'",
-          photo: 'assets/team/roman.JPEG',
+          photo: 'assets/team/saurav.jpeg',
         },
         
         {
