@@ -61,7 +61,7 @@ app.get("/exoplanet-info/:name", async (req, res) => {
 
   try {
     const prompt =
-      `Tell me some fun and easy-to-understand facts about the exoplanet ${exoplanetName} that kids would love!.`;
+      `Tell me some fun and easy-to-understand facts about the exoplanet ${exoplanetName} that kids would love!. Use NASA's website to get information.`;
     const answer = await chat.send(prompt);
     res.json(answer.choices[0].message.content);
   } catch (error) {
@@ -91,10 +91,10 @@ app.get("/space-questions", async (req, res) => {
 
   try {
     const prompt = `
-      You are a space expert, and you can only answer questions related to space, astronomy, or exoplanets. 
+      You are a space expert, and you can only answer questions related to space, astronomy, or exoplanets.
       If the question is not about these topics, respond strictly with:
       "Sorry, I only answer questions about space, astronomy, or exoplanets!"
-      The question is: "${userQuestion}". Please respond appropriately, as if you're answering a school kid.
+      The question is: "${userQuestion}". Please respond appropriately, as if you're answering a school kid. Use NASA's website to get information.
     `;
     const answer = await chat.send(prompt);
     res.json(answer.choices[0].message.content);
