@@ -1,0 +1,118 @@
+/* Close button styling */
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #f0f0f0;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+/* Hover effect for close button */
+
+
+/* Rest of your existing CSS */
+
+/* Container for the spanner */
+/* Center the spanner container in the middle of the page */
+.spanner-container {
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center both horizontally and vertically */
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Spanner Icon (Click to Open Menu) */
+.spanner-icon {
+    font-size: 35px;
+    color: #ffcc00; /* Retro golden yellow */
+    cursor: pointer;
+    animation: spin 3s infinite linear;
+    filter: drop-shadow(0 0 5px #ffcc00); /* Subtle glow around the spanner */
+}
+
+/* Spinning effect for the spanner icon */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Menu container */
+.spanner-menu {
+    position: fixed;
+    top: 200px;
+    left: 50%;
+    transform: translateX(-50%); /* Center the menu horizontally */
+    background-color: rgba(0, 0, 0, 0.95); /* Dark translucent black */
+    border: 2px solid #ffcc00; /* Gold border */
+    border-radius: 10px; /* Rounded edges for a smoother retro look */
+    padding: 30px;
+    width: 400px;
+    box-shadow: 0 0 15px rgba(255, 204, 0, 0.5); /* Softer shadow */
+    animation: appear 0.5s ease-in-out;
+    font-family: 'Courier New', Courier, monospace; /* Retro monospace font */
+    position: relative; /* Make this element relative to position the close button */
+}
+
+/* Animation for the menu appearance */
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Menu header style */
+.menu-header {
+    color: #ffcc00;
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px; /* Slight spacing for a retro effect */
+    border-bottom: 1px solid #ffcc00; /* Underline the header */
+    padding-bottom: 10px;
+}
+
+/* Menu options */
+.menu-options {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Menu item styling */
+.menu-item {
+    color: #f0f0f0; /* Light gray for text */
+    font-size: 18px;
+    margin: 15px 0;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    text-align: center;
+}
+
+.menu-item:hover {
+    color: #ffcc00; /* Highlight in gold on hover */
+}
+
+/* Optional: Add a subtle click effect */
+.menu-item:active {
+    transform: scale(0.95);
+}

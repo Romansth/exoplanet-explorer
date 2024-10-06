@@ -1,0 +1,195 @@
+/* SpaceStory.css */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+/* Container for the entire story */
+.space-story-container {
+  position: relative;
+  overflow-y: auto;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  text-align: center;
+  color: #fff;
+  border-radius: 30px;
+  background-color: rgba(39, 46, 50, 0.5); /* Dark blue/gray space theme */
+  background-size: cover;
+  background-position: center;
+  height: 100vh; /* 80% of the viewport height */
+  width: 70%; /* Reduced width */
+  box-shadow: 0 10px 30px rgba(6, 91, 151, 0.5);
+  transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth shadow and scale transition */
+}
+
+/* Actions on mouse hover */
+.space-story-container:hover {
+  box-shadow: 0 20px 60px rgba(6, 91, 151, 0.5);
+  transform: translateY(-5px); /* Lift slightly on hover */
+}
+
+/* Remove scrollbar */
+.space-story-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Planet title */
+.planet-title {
+  font-family: "Public Sans", sans-serif;
+  font-size: 3rem;
+  margin-bottom: 30px;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  animation: floatTitle 5s ease-in-out infinite;
+}
+
+/* Floating animation for the title */
+@keyframes floatTitle {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Story paragraph */
+.story-paragraph {
+  font-family: "Public Sans", sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 0 20px;
+  animation: floatText 10s ease-in-out infinite;
+  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+}
+
+/* Hover effect on paragraph */
+.story-paragraph:hover {
+  transform: scale(1.5); /* Slight zoom on hover */
+  color: #ffdf00; /* Change color to yellow on hover */
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.8); /* Glow effect */
+  animation: floatText 10s ease-in-out infinite;
+}
+
+/* Floating animation for paragraphs */
+@keyframes floatText {
+  0%,
+  100% {
+    transform: translateY(10px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Animated space elements */
+.space-element {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: floatElement 10s linear infinite;
+  opacity: 0.8;
+}
+
+/* Different animations for each element */
+.space-element:nth-child(odd) {
+  animation-duration: 12s;
+  animation-direction: alternate;
+}
+
+.space-element:nth-child(even) {
+  animation-duration: 15s;
+  animation-direction: alternate-reverse;
+}
+
+/* Floating animation for space elements */
+@keyframes floatElement {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate(50px, -50px) rotate(360deg);
+  }
+}
+
+/* Positioning the space elements randomly */
+.space-element:nth-child(1) {
+  top: 10%;
+  left: 5%;
+  background-image: url("/public/assets/astronautrocket.png");
+}
+
+.space-element:nth-child(2) {
+  top: 20%;
+  right: 10%;
+  background-image: url("/public/assets/astronautrocket.png");
+}
+
+.space-element:nth-child(3) {
+  bottom: 15%;
+  left: 15%;
+  background-image: url("/public/assets/astronautrocket.png");
+}
+
+.space-element:nth-child(4) {
+  bottom: 5%;
+  right: 20%;
+  background-image: url("/public/assets/astronautrocket.png");
+}
+
+/* Twinkling stars */
+.twinkling-star {
+  position: absolute;
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  animation: twinkle 2s infinite;
+}
+
+/* Randomly position stars */
+.twinkling-star:nth-child(odd) {
+  animation-duration: 3s;
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.5);
+  }
+}
+
+/* Error and loading messages */
+.error-message,
+.loading-message {
+  color: #fff;
+  font-size: 1.5rem;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .planet-title {
+    font-size: 2.5rem;
+  }
+
+  .story-paragraph {
+    font-size: 1.2rem;
+  }
+
+  .space-element {
+    width: 60px;
+    height: 60px;
+  }
+}

@@ -1,0 +1,69 @@
+/* Container for the whole team */
+.team-container {
+    text-align: center;
+    padding: 50px;
+    background: transparent; /* Clear background as requested */
+}
+
+/* Grid for displaying the team members */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three columns in the first row */
+    grid-gap: 40px; /* Space between grid items */
+    justify-items: center;
+
+}
+
+/* Breakpoint for smaller screens - to display 2 items in the second row */
+@media (max-width: 768px) {
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr); /* Two columns on smaller screens */
+    }
+}
+
+/* Each individual team member's container */
+.team-member {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+/* Glowing circle around the photos */
+.photo-circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    padding: 10px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.5) 50%, transparent 100%); /* Reduced glow */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.3), 0 0 30px rgba(255, 255, 255, 0.2); /* Softer shadow */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s;
+}
+
+.photo-circle:hover {
+    transform: scale(1.1); /* Subtle zoom on hover */
+}
+
+/* Styling the team member photos */
+.team-photo {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Styling the name and college */
+h3 {
+    margin-top: 15px;
+    font-size: 18px;
+    color: #fff;
+}
+
+p {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #ccc;
+}
